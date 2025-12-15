@@ -1,0 +1,13 @@
+' creates a harmless file to validate detection
+
+Set objShell = CreateObject("Wscript.Shell")
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+
+strPath = "C:\\PurpleTeam_Test_File.txt"
+
+Set objFile = objFSO.CreateTextFile(strPath, True)
+objFile.WriteLine "CYE Test - " & Now()
+objFile.Close()
+
+' Create a popup to indicate completion (visible indicator)
+MsgBox "File Wrote!", 0, "File Wrote!"
